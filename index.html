@@ -3,14 +3,56 @@
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
-      window.onload = function(){
+      window.onload = function(showMsg){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
+				console.table(window.geemails);
+				console.log(window.geemails[0]);
+
+				for(var i=0; i<window.geemails.length; i++){
+				var object = document.createElement('div');
+				object.className= 'message';
+				object.addEventListener('click', showMsg);
+				main.appendChild(object);
+
+				var date = document.createElement('div');
+				date.className = 'date';
+				date.innerHTML = window.geemails[i].date;
+				object.appendChild(date);
+
+				var sender = document.createElement('div');
+				sender.className = 'sender';
+				sender.innerHTML = window.geemails[i].sender;
+				object.appendChild(sender);
+				
+				var subject = document.createElement('div');
+				subject.className = 'subject';
+				subject.innerHTML = window.geemails[i].subject;
+				object.appendChild(subject);
+
+				var body = document.createElement('div');
+				body.className = 'body';
+				body.innerHTML = window.geemails[i].body;
+				object.appendChild(body)
+			}
+				
+				function showMsg(){
+					// console.log(this.innerHTML)
+					var msgData = this.querySelectorAll('.body')[0];
+				if(msgData.style.display === 'block'){
+					msgData.style.display = 'none';
+				}else{
+					msgData.style.display = 'block';
+				}
+				}
       };
     </script>
 	</head>
 	<body>
+			<header id="intro">
+					<div class="content"></div>
+					<h1><div class="openingTitle">Gee-Mail</div></h1>
+			</header>
 		<div class="container" id="main">
 			Build Me!
 		</div>
