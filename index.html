@@ -34,6 +34,8 @@
 				body.className = 'body';
 				body.innerHTML = window.geemails[i].body;
 				object.appendChild(body)
+
+				var msgCounter = document.getElementsByClassName('')
 			}
 				
 				function showMsg(){
@@ -45,7 +47,26 @@
 					msgData.style.display = 'block';
 				}
 				}
-      };
+	  };
+	  
+				  var msgCounterIcon = document.getElementsByClassName('message');
+				//   console.log(msgCounterIcon)
+
+				for(var i = 0; i<msgCounterIcon.length; i++){
+					// console.log(msgCounterIcon[i])
+					msgCounterIcon[i].addEventListener('click', totalMsgs);
+
+					var counter = document.createElement('div');
+					counter.className = 'message';
+					msgCounterIcon[i].appendChild(counter);
+				}
+
+				function totalMsgs(){
+					// console.log('hi')
+					var messageCount = this.querySelectorAll('.message')[0];
+					// console.log(messageCount);
+					messageCount.innerHTML++;
+				}
     </script>
 	</head>
 	<body>
@@ -53,8 +74,10 @@
 					<div class="content"></div>
 					<h1><div class="openingTitle">Gee-Mail</div></h1>
 			</header>
+
 		<div class="container" id="main">
-			Build Me!
+				<div class="totalMessageCnt" style="font-size:3em; color:cornflowerblue">Inbox</div>
 		</div>
+	
 	</body>
 </html>
