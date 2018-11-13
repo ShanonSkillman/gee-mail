@@ -34,9 +34,7 @@
 				body.className = 'body';
 				body.innerHTML = window.geemails[i].body;
 				object.appendChild(body);
-
-				var mailCount = document.getElementsByClassName('object')
-			}
+				}
 				
 				function showMsg(){
 					// console.log(this.innerHTML)
@@ -45,26 +43,24 @@
 					msgData.style.display = 'none';
 				}else{
 					msgData.style.display = 'block';
+					}
 				}
-				}
-	  };
-	 			 
-				 var mailCount = geemails.length;
+				
+				 var getMailCount = geemails.length;
 				 var count = document.createElement('div');
 				 count.id = 'count';
 				 count.innerHTML = getMailCount;
 				 mailCount.appendChild(count);
+	};
  	</script>
 	</head>
 	<body>
-			<header id="intro">
-					<div id="topSegment" class="topSegment">
-						<div id="gMail">
-							<h1 id="title" class="topSegment">Gee-Mail</h1>
-							<img id='pic' class='topSegment' src="css/mail.jpeg" alt="mailIcon"/></div>
-							<div id="mailCount" class="topSegment"></div>
-							<div id="inboxTitle" class="topSegment" style="font-size:3em; color:cornflowerblue">Inbox</div>
-			</header>
+		<div id="intro">
+				<h1 id="title" class="topSegment">Gee-Mail</h1>
+					<img id='pic' class='topSegment' 		src="css/mail.jpeg" alt="mailIcon"/>
+					<div id="mailCount" 	class="topSegment"></div>
+					<div id="inboxTitle" class="topSegment">Inbox</div>
+		</div>
 			
 		<div class="container" id="main">
 				<div id="starredInbox" class="differentInboxes">Starred</div>
@@ -77,7 +73,5 @@
 				<div id="trashBox" class="differentInboxes">Trash</div>
 		</div>
 		
-
-	
 	</body>
 </html>
