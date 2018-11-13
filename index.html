@@ -33,9 +33,9 @@
 				var body = document.createElement('div');
 				body.className = 'body';
 				body.innerHTML = window.geemails[i].body;
-				object.appendChild(body)
+				object.appendChild(body);
 
-				var msgCounter = document.getElementsByClassName('')
+				var mailCount = document.getElementsByClassName('object')
 			}
 				
 				function showMsg(){
@@ -48,36 +48,36 @@
 				}
 				}
 	  };
-	  
-				  var msgCounterIcon = document.getElementsByClassName('message');
-				//   console.log(msgCounterIcon)
-
-				for(var i = 0; i<msgCounterIcon.length; i++){
-					// console.log(msgCounterIcon[i])
-					msgCounterIcon[i].addEventListener('click', totalMsgs);
-
-					var counter = document.createElement('div');
-					counter.className = 'message';
-					msgCounterIcon[i].appendChild(counter);
-				}
-
-				function totalMsgs(){
-					// console.log('hi')
-					var messageCount = this.querySelectorAll('.message')[0];
-					// console.log(messageCount);
-					messageCount.innerHTML++;
-				}
-    </script>
+	 			 
+				 var mailCount = geemails.length;
+				 var count = document.createElement('div');
+				 count.id = 'count';
+				 count.innerHTML = getMailCount;
+				 mailCount.appendChild(count);
+ 	</script>
 	</head>
 	<body>
 			<header id="intro">
-					<div class="content"></div>
-					<h1><div class="openingTitle">Gee-Mail</div></h1>
+					<div id="topSegment" class="topSegment">
+						<div id="gMail">
+							<h1 id="title" class="topSegment">Gee-Mail</h1>
+							<img id='pic' class='topSegment' src="css/mail.jpeg" alt="mailIcon"/></div>
+							<div id="mailCount" class="topSegment"></div>
+							<div id="inboxTitle" class="topSegment" style="font-size:3em; color:cornflowerblue">Inbox</div>
 			</header>
-
+			
 		<div class="container" id="main">
-				<div class="totalMessageCnt" style="font-size:3em; color:cornflowerblue">Inbox</div>
+				<div id="starredInbox" class="differentInboxes">Starred</div>
+				<div id="snoozedInbox" class="differentInboxes">Snoozed</div>
+				<div id="importantInbox" class="differentInboxes">Important</div>
+				<div id="socialInbox" class="differentInboxes">Social</div>
+				<div id="spamInbox" class="differentInboxes">Spam</div>
+				<div id="sentBox" class="differentInboxes">Sent</div>
+				<div id="draftsBox" class="differentInboxes">Drafts</div>
+				<div id="trashBox" class="differentInboxes">Trash</div>
 		</div>
+		
+
 	
 	</body>
 </html>
