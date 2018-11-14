@@ -45,6 +45,7 @@
 					msgData.style.display = 'block';
 					}
 				}
+
 				 var getMailCount = geemails.length;
 				 var count = document.createElement('div');
 				 count.id = 'count';
@@ -61,27 +62,27 @@
 
 					var newDate = document.createElement('div');
 					newDate.className = 'date';
-					newDate.innerHTML = getNewMessage.newdate;
+					newDate.innerHTML = getNewMessage().date;
 					newObject.appendChild(newDate);
 
 					var newSender = document.createElement('div');
 					newSender.className = 'sender';
-					newSender.innerHTML = getNewMessage.sender;
+					newSender.innerHTML = getNewMessage().sender;
 					newObject.appendChild(newSender);
 
 					var newSubject = document.createElement('div');
 					newSubject.className = 'subject';
-					newSubject.innerHTML = getNewMessage.subject;
+					newSubject.innerHTML = getNewMessage().subject;
 					newObject.appendChild(newSubject);
 
 					var newBody = document.createElement('div');
 					newBody.className = 'body';
-					newBody.innerHTML = getNewMessage.body;
+					newBody.innerHTML = getNewMessage().body;
 					newObject.appendChild(newBody);
 				}
 				// console.log(getNewMessage(makinEmails))
 
-				setInterval(makinEmails, 3000);
+				setInterval(makinEmails, 5000);
 
 				function showNew(){
 					// console.log(this.innerHTML)
@@ -93,7 +94,7 @@
 						newMsgData.style.display = 'block';
 						}
 					}
-				
+
 		
 	};
  	</script>
