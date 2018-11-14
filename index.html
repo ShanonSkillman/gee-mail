@@ -45,12 +45,56 @@
 					msgData.style.display = 'block';
 					}
 				}
-				
 				 var getMailCount = geemails.length;
 				 var count = document.createElement('div');
 				 count.id = 'count';
 				 count.innerHTML = getMailCount;
 				 mailCount.appendChild(count);
+
+				console.log(getNewMessage())
+				
+				function makinEmails(){
+					var newObject=document.createElement('div');
+					newObject.className= 'message';
+					newObject.addEventListener('click', showNew);
+					main.appendChild(newObject);
+
+					var newDate = document.createElement('div');
+					newDate.className = 'date';
+					newDate.innerHTML = getNewMessage.newdate;
+					newObject.appendChild(newDate);
+
+					var newSender = document.createElement('div');
+					newSender.className = 'sender';
+					newSender.innerHTML = getNewMessage.sender;
+					newObject.appendChild(newSender);
+
+					var newSubject = document.createElement('div');
+					newSubject.className = 'subject';
+					newSubject.innerHTML = getNewMessage.subject;
+					newObject.appendChild(newSubject);
+
+					var newBody = document.createElement('div');
+					newBody.className = 'body';
+					newBody.innerHTML = getNewMessage.body;
+					newObject.appendChild(newBody);
+				}
+				// console.log(getNewMessage(makinEmails))
+
+				setInterval(makinEmails, 3000);
+
+				function showNew(){
+					// console.log(this.innerHTML)
+
+					var newMsgData = this.querySelectorAll('.body')[0];
+					if(newMsgData.style.display === 'block'){
+						newMsgData.style.display = 'none';
+					}else{
+						newMsgData.style.display = 'block';
+						}
+					}
+				
+		
 	};
  	</script>
 	</head>
@@ -58,19 +102,23 @@
 		<div id="intro">
 				<h1 id="title" class="topSegment">Gee-Mail</h1>
 					<img id='pic' class='topSegment' 		src="css/mail.jpeg" alt="mailIcon"/>
-					<div id="mailCount" 	class="topSegment"></div>
+					<div id="mailCount" class="topSegment"></div>
 					<div id="inboxTitle" class="topSegment">Inbox</div>
 		</div>
 			
 		<div class="container" id="main">
-				<div id="starredInbox" class="differentInboxes">Starred</div>
+				<div id="starredInbox" 		class="differentInboxes">Starred</div>
 				<div id="snoozedInbox" class="differentInboxes">Snoozed</div>
 				<div id="importantInbox" class="differentInboxes">Important</div>
 				<div id="socialInbox" class="differentInboxes">Social</div>
-				<div id="spamInbox" class="differentInboxes">Spam</div>
-				<div id="sentBox" class="differentInboxes">Sent</div>
-				<div id="draftsBox" class="differentInboxes">Drafts</div>
-				<div id="trashBox" class="differentInboxes">Trash</div>
+				<div id="spamInbox" 
+				class="differentInboxes">Spam</div>
+				<div id="sentBox" 
+				class="differentInboxes">Sent</div>
+				<div id="draftsBox" 
+				class="differentInboxes">Drafts</div>
+				<div id="trashBox" 
+				class="differentInboxes">Trash</div>
 		</div>
 		
 	</body>
