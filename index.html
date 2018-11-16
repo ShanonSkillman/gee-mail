@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<title>Gee-Mail</title>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
@@ -46,7 +47,7 @@
 					}
 				}
 
-				 var getMailCount = geemails.length;
+				 var getMailCount = window.geemails.length;
 				 var count = document.createElement('div');
 				 count.id = 'count';
 				 count.innerHTML = getMailCount;
@@ -55,6 +56,8 @@
 				console.log(getNewMessage())
 				
 				function makinEmails(){
+					var makinEmails=getNewMessage();
+
 					var newObject=document.createElement('div');
 					newObject.className= 'message';
 					newObject.addEventListener('click', showNew);
@@ -79,10 +82,15 @@
 					newBody.className = 'body';
 					newBody.innerHTML = getNewMessage().body;
 					newObject.appendChild(newBody);
+
+					 getMailCount++;
+            		 document.getElementById('count').innerHTML=(getMailCount)
+			
+
 				}
 				// console.log(getNewMessage(makinEmails))
 
-				setInterval(makinEmails, 5000);
+				setInterval(makinEmails, 10000);
 
 				function showNew(){
 					// console.log(this.innerHTML)
@@ -99,27 +107,34 @@
 	};
  	</script>
 	</head>
-	<body>
-		<div id="intro">
-				<h1 id="title" class="topSegment">Gee-Mail</h1>
+	<header id="intro">
+		<div class="openingContent">
+			<h1><div id="openingTitle" class="topSegment">
+				Gee-Mail</div>
+			</h1>
+			<div id = "imageBox">
 					<img id='pic' class='topSegment' 		src="css/mail.jpeg" alt="mailIcon"/>
-					<div id="mailCount" class="topSegment"></div>
-					<div id="inboxTitle" class="topSegment">Inbox</div>
-		</div>
-			
+			</div>
+			<div id="mailCount" class="topSegment"></div>
+			<div id="inboxTitle" class="topSegment">Inbox</div>
+			<nav id="sidemenu">
+					<div class="differentInboxes">
+						<a href="starred">Starred</a>
+						<a href="snoozedInbox">Snoozed</a>
+						<a href="importantInbox">Important</a>
+						<a href="socialInbox">Social</a>
+						<a href="spamInbox">Spam</a>
+						<a href="sentBox">Sent</a>
+						<a href="drafts">Drafts</a>
+						<a href="trash">Trash</a>
+					</div>
+			</nav>
+	</header>
+	<body>
 		<div class="container" id="main">
-				<div id="starredInbox" 		class="differentInboxes">Starred</div>
-				<div id="snoozedInbox" class="differentInboxes">Snoozed</div>
-				<div id="importantInbox" class="differentInboxes">Important</div>
-				<div id="socialInbox" class="differentInboxes">Social</div>
-				<div id="spamInbox" 
-				class="differentInboxes">Spam</div>
-				<div id="sentBox" 
-				class="differentInboxes">Sent</div>
-				<div id="draftsBox" 
-				class="differentInboxes">Drafts</div>
-				<div id="trashBox" 
-				class="differentInboxes">Trash</div>
+			
+				
+			</section>
 		</div>
 		
 	</body>
