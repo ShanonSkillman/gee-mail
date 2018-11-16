@@ -10,6 +10,7 @@ body{
 
 #openingTitle{
     font-size: 35px;
+    padding: 15px;
 }
 
 #composeButton{
@@ -43,7 +44,7 @@ body{
     float: left
 }
 .differentInboxes{
-    text-align: center;
+    text-align: left;
     word-wrap: normal;
     word-spacing: 10px;
     font-size: 18px;
